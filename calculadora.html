@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+
+  <title>Calculadora Pacera</title>
+  <!-- prévia de compartilhamento (whatsapp, instagram, redes) -->
+  <meta name="description" content="calcule pace, velocidade, tempo, distância, calorias e previsão de prova. em quilômetros ou milhas.">
+  <meta name="theme-color" content="#121212">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="pacera club.">
+  <meta property="og:title" content="calculadora pacera | pace, velocidade e previsão de prova">
+  <meta property="og:description" content="calcule pace, velocidade, tempo, distância, calorias e previsão de prova. em quilômetros ou milhas.">
+  <meta property="og:url" content="https://pacera-theta.vercel.app/calculadora.html">
+  <meta property="og:image" content="https://pacera-theta.vercel.app/img/pacera-previa.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="corredores na rua com a frase every pace has a place e o logo pacera">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" type="image/svg+xml" href="icon.svg">
+  <link rel="stylesheet" href="style/reset.css">
+  <link rel="stylesheet" href="style/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;0,900;1,800;1,900&family=Outfit:wght@300;400;500;600&display=swap">
+  <link rel="stylesheet" href="style/calculadora.css">
+
+</head>
+
+<body>
+  <header class="top" id="top">
+    <div class="top-in px">
+      <a class="logo" href="index.html" aria-label="pacera club, início"><img src="img/logo-pacera.svg" alt="" width="406" height="129"></a>
+      <nav class="nav" id="menu" aria-label="seções">
+        <a href="index.html#grupos">grupos</a>
+        <a href="index.html#como-entrar">como entrar</a>
+        <a href="index.html#mulheres">mulheres</a>
+        <a href="calculadora.html" aria-current="page">calculadora</a>
+        <a href="#contato">contato</a>
+      </nav>
+      <div class="top-actions">
+        <a class="br js-strava" href="https://www.strava.com/clubs/1765318" target="_blank" rel="noopener">entre no clube</a>
+        <button class="menu-btn" id="menu-btn" type="button" aria-label="abrir menu" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="calc-hero px">
+      <img class="calc-star" src="img/logo-estrela.svg" alt="" width="600" height="159">
+      <div class="sec-num"><span class="label">/ calculadora</span><span class="label">pra todo corredor</span></div>
+      <h1>Calcule o<br>seu <span class="yl">ritmo</span></h1>
+      <div class="hero-row">
+        <p class="lead">pace, velocidade, distância, tempo, calorias e previsão de prova. preencha o que você sabe e a gente calcula o resto.</p>
+        <div style="display: grid; gap: 8px; justify-items: start;">
+          <div class="unit" role="group" aria-label="unidade de medida">
+            <button type="button" id="unit-km" aria-pressed="true">quilômetros</button>
+            <button type="button" id="unit-mi" aria-pressed="false">milhas</button>
+          </div>
+          <span class="unit-note">vale para todas as calculadoras</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- / 01 calculadora de corrida -->
+    <section class="tool-sec px" id="corrida" aria-labelledby="t1">
+      <div class="tool-head">
+        <div class="sec-num"><span class="label">/ 01</span><span class="label">distância · tempo · ritmo</span></div>
+        <h2 id="t1">Calculadora<br>de <span class="yl">corrida</span></h2>
+        <p class="lead">escolha o que quer descobrir e preencha os outros dois. 10 km em 1h? aparece o pace. 1h a 5:00/km? aparece a distância.</p>
+      </div>
+      <div class="tool">
+        <div class="fields">
+          <div class="ask">
+            <span class="flabel">o que você quer descobrir?</span>
+            <div class="seg" role="group" aria-label="o que você quer descobrir" id="c-target">
+              <button type="button" data-t="pace" aria-pressed="true">o ritmo</button>
+              <button type="button" data-t="time" aria-pressed="false">o tempo</button>
+              <button type="button" data-t="dist" aria-pressed="false">a distância</button>
+            </div>
+          </div>
+          <div class="field" data-group="dist">
+            <label class="flabel" for="c-dist">distância <span class="tag">calculado</span></label>
+            <div class="inrow"><input class="in w4 js-dist" id="c-dist" type="text" inputmode="decimal" placeholder="0" autocomplete="off"><span class="u u-dist">km</span></div>
+            <div class="chips" data-for="c-dist">
+              <button class="chip" type="button" data-km="5">5 km</button>
+              <button class="chip" type="button" data-km="10">10 km</button>
+              <button class="chip" type="button" data-km="21.0975">meia</button>
+              <button class="chip" type="button" data-km="42.195">maratona</button>
+            </div>
+          </div>
+          <div class="field" data-group="time">
+            <span class="flabel" id="c-time-l">tempo <span class="tag">calculado</span></span>
+            <div class="inrow" role="group" aria-labelledby="c-time-l">
+              <input class="in" id="c-h" type="text" inputmode="numeric" maxlength="3" placeholder="0" aria-label="horas" autocomplete="off"><span class="sep">:</span>
+              <input class="in" id="c-m" type="text" inputmode="numeric" maxlength="2" placeholder="00" aria-label="minutos" autocomplete="off"><span class="sep">:</span>
+              <input class="in" id="c-s" type="text" inputmode="numeric" maxlength="2" placeholder="00" aria-label="segundos" autocomplete="off"><span class="u">h : min : s</span>
+            </div>
+          </div>
+          <div class="field" data-group="pace">
+            <span class="flabel" id="c-pace-l">ritmo
+              <span class="seg mini" role="group" aria-label="digitar o ritmo como" id="c-mode">
+                <button type="button" data-m="pace" aria-pressed="true">pace</button>
+                <button type="button" data-m="speed" aria-pressed="false" class="u-speed">km/h</button>
+              </span>
+              <span class="tag">calculado</span>
+            </span>
+            <div class="inrow" id="c-pace-in" role="group" aria-labelledby="c-pace-l">
+              <input class="in js-pm" id="c-pm" type="text" inputmode="numeric" maxlength="2" placeholder="0" aria-label="pace, minutos" autocomplete="off"><span class="sep">:</span>
+              <input class="in js-ps" id="c-ps" type="text" inputmode="numeric" maxlength="2" placeholder="00" aria-label="pace, segundos" autocomplete="off"><span class="u u-pace">/km</span>
+            </div>
+            <div class="inrow" id="c-speed-in" hidden>
+              <input class="in w4 js-speed" id="c-v" type="text" inputmode="decimal" placeholder="0" aria-label="velocidade" autocomplete="off"><span class="u u-speed">km/h</span>
+            </div>
+          </div>
+          <button class="clear" type="button" id="c-clear">limpar</button>
+        </div>
+        <div class="result" aria-live="polite" id="c-out"></div>
+      </div>
+    </section>
+
+    <!-- / 02 esteira -->
+    <section class="tool-sec px" id="esteira" aria-labelledby="t2">
+      <div class="tool-head">
+        <div class="sec-num"><span class="label">/ 02</span><span class="label">pace ⇄ velocidade</span></div>
+        <h2 id="t2">Conversor<br>de <span class="yl">esteira</span></h2>
+        <p class="lead">a esteira mostra velocidade, o relógio mostra pace. digite um dos dois e veja o outro na hora.</p>
+      </div>
+      <div class="tool">
+        <div class="fields">
+          <div class="field">
+            <span class="flabel" id="e-pace-l">pace</span>
+            <div class="inrow" role="group" aria-labelledby="e-pace-l">
+              <input class="in js-pm" id="e-pm" type="text" inputmode="numeric" maxlength="2" placeholder="0" aria-label="pace, minutos" autocomplete="off"><span class="sep">:</span>
+              <input class="in js-ps" id="e-ps" type="text" inputmode="numeric" maxlength="2" placeholder="00" aria-label="pace, segundos" autocomplete="off"><span class="u u-pace">/km</span>
+            </div>
+          </div>
+          <div class="field">
+            <label class="flabel" for="e-v">velocidade</label>
+            <div class="inrow"><input class="in w4 js-speed" id="e-v" type="text" inputmode="decimal" placeholder="0" autocomplete="off"><span class="u u-speed">km/h</span></div>
+          </div>
+          <p class="hint"><b>dica de esteira:</b> use 1% de inclinação pra o esforço ficar parecido com o de correr na rua.</p>
+        </div>
+        <div class="result" aria-live="polite" id="e-out"></div>
+      </div>
+    </section>
+
+    <!-- / 03 calorias -->
+    <section class="tool-sec px" id="calorias" aria-labelledby="t3">
+      <div class="tool-head">
+        <div class="sec-num"><span class="label">/ 03</span><span class="label">estimativa</span></div>
+        <h2 id="t3">Calorias<br><span class="yl">gastas</span></h2>
+        <p class="lead">coloque seu peso, a distância e o tempo da corrida pra ter uma estimativa do gasto.</p>
+      </div>
+      <div class="tool">
+        <div class="fields">
+          <div class="field">
+            <label class="flabel" for="k-w">seu peso</label>
+            <div class="inrow"><input class="in w4 js-weight" id="k-w" type="text" inputmode="decimal" placeholder="0" autocomplete="off"><span class="u u-weight">kg</span></div>
+          </div>
+          <div class="field">
+            <span class="flabel" id="k-time-l">tempo</span>
+            <div class="inrow" role="group" aria-labelledby="k-time-l">
+              <input class="in" id="k-h" type="text" inputmode="numeric" maxlength="3" placeholder="0" aria-label="horas" autocomplete="off"><span class="sep">:</span>
+              <input class="in" id="k-m" type="text" inputmode="numeric" maxlength="2" placeholder="00" aria-label="minutos" autocomplete="off"><span class="sep">:</span>
+              <input class="in" id="k-s" type="text" inputmode="numeric" maxlength="2" placeholder="00" aria-label="segundos" autocomplete="off"><span class="u">h : min : s</span>
+            </div>
+          </div>
+          <div class="field">
+            <label class="flabel" for="k-dist">distância</label>
+            <div class="inrow"><input class="in w4 js-dist" id="k-dist" type="text" inputmode="decimal" placeholder="0" autocomplete="off"><span class="u u-dist">km</span></div>
+            <div class="chips" data-for="k-dist">
+              <button class="chip" type="button" data-km="5">5 km</button>
+              <button class="chip" type="button" data-km="10">10 km</button>
+              <button class="chip" type="button" data-km="21.0975">meia</button>
+              <button class="chip" type="button" data-km="42.195">maratona</button>
+            </div>
+          </div>
+        </div>
+        <div class="result" aria-live="polite" id="k-out"></div>
+      </div>
+    </section>
+
+    <!-- / 04 previsão de prova -->
+    <section class="tool-sec px" id="previsao" aria-labelledby="t4">
+      <div class="tool-head">
+        <div class="sec-num"><span class="label">/ 04</span><span class="label">estimativa</span></div>
+        <h2 id="t4">Previsão<br>de <span class="yl">prova</span></h2>
+        <p class="lead">coloque uma corrida recente e veja quanto tempo você faria nas outras distâncias.</p>
+      </div>
+      <div class="tool">
+        <div class="fields">
+          <div class="field">
+            <label class="flabel" for="r-dist">corri</label>
+            <div class="inrow"><input class="in w4 js-dist" id="r-dist" type="text" inputmode="decimal" placeholder="0" autocomplete="off"><span class="u u-dist">km</span></div>
+            <div class="chips" data-for="r-dist">
+              <button class="chip" type="button" data-km="5">5 km</button>
+              <button class="chip" type="button" data-km="10">10 km</button>
+              <button class="chip" type="button" data-km="21.0975">meia</button>
+              <button class="chip" type="button" data-km="42.195">maratona</button>
+            </div>
+          </div>
+          <div class="field">
+            <span class="flabel" id="r-time-l">em</span>
+            <div class="inrow" role="group" aria-labelledby="r-time-l">
+              <input class="in" id="r-h" type="text" inputmode="numeric" maxlength="3" placeholder="0" aria-label="horas" autocomplete="off"><span class="sep">:</span>
+              <input class="in" id="r-m" type="text" inputmode="numeric" maxlength="2" placeholder="00" aria-label="minutos" autocomplete="off"><span class="sep">:</span>
+              <input class="in" id="r-s" type="text" inputmode="numeric" maxlength="2" placeholder="00" aria-label="segundos" autocomplete="off"><span class="u">h : min : s</span>
+            </div>
+          </div>
+          <p class="hint">a previsão usa a fórmula de riegel, bem conhecida entre corredores. ela funciona melhor pra quem já treina a distância maior. na maratona, costuma ser otimista.</p>
+        </div>
+        <div class="result" aria-live="polite" id="r-out"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contato" class="foot-space">
+    <div class="foot-mark px" aria-hidden="true"><img src="img/logo-pacera.svg" alt="" width="406" height="129"></div>
+    <div class="foot-row px">
+      <div class="contacts">
+        <span><span class="k">e-mail</span><button class="mail" id="mail" type="button" title="clique para copiar">contatopaceraclub@gmail.com</button></span>
+        <span><span class="k">instagram</span><a href="https://www.instagram.com/paceraclub" target="_blank" rel="noopener">@paceraclub</a></span>
+      </div>
+      <span>every pace has a place.</span>
+    </div>
+  </footer>
+  <div class="toast" id="toast" role="status" aria-live="polite">e-mail copiado</div>
+
+  <script src="script/calculadora.js"></script>
+</body>
+
+</html>

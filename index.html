@@ -1,0 +1,285 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset=utf8>
+  <meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover">
+
+  <title>pacera. | clube de corrida</title>
+  <!-- prévia de compartilhamento (whatsapp, instagram, redes) -->
+  <meta name="description" content="encontre o grupo do seu ritmo e corra junto com gente do brasil inteiro. every pace has a place.">
+  <meta name="theme-color" content="#121212">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="pacera club.">
+  <meta property="og:title" content="pacera. | clube de corrida">
+  <meta property="og:description" content="encontre o grupo do seu ritmo e corra junto com gente do brasil inteiro. every pace has a place.">
+  <meta property="og:url" content="https://pacera-theta.vercel.app/">
+  <meta property="og:image" content="https://pacera-theta.vercel.app/img/pacera-previa.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="corredores na rua com a frase every pace has a place e o logo pacera">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" type="image/svg+xml" href="icon.svg">
+  <link rel="stylesheet" href="style/reset.css">
+  <link rel="stylesheet" href="style/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;0,900;1,800;1,900&family=Outfit:wght@300;400;500;600&display=swap">
+
+</head>
+
+<body>
+  <header class="top" id="top">
+    <div class="top-in px">
+      <a class="logo" href="#inicio" aria-label="pacera club, início"><img src="img/logo-pacera.svg" alt="" width="406" height="129"></a>
+      <nav class="nav" id="menu" aria-label="seções">
+        <a href="#grupos">grupos</a>
+        <a href="#como-entrar">como entrar</a>
+        <a href="#mulheres">mulheres</a>
+        <a href="calculadora.html">calculadora</a>
+        <a href="#contato">contato</a>
+      </nav>
+      <div class="top-actions">
+        <a class="br js-strava" href="https://www.strava.com/clubs/1765318" target="_blank" rel="noopener">entre no clube</a>
+        <button class="menu-btn" id="menu-btn" type="button" aria-label="abrir menu" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero px" id="inicio">
+      <div class="hero-bg"><img src="img/run-2.webp" alt="grupo de corredores na rua ao entardecer" fetchpriority="high">
+      </div>
+      <div class="hero-meta">
+        <span class="label"><b>pacera club.</b> / clube de corrida por pace</span>
+        <span class="label">brasil inteiro / 5 grupos</span>
+      </div>
+      <h1><span>Every pace</span><span class="l2"><span class="slash">/</span> <span class="yl"
+            style="display:inline">has a place.</span></span></h1>
+      <div class="star" aria-hidden="true"><img src="img/logo-estrela.svg" alt="" width="600" height="159"></div>
+      <div class="hero-foot">
+        <p class="lead">aqui ninguém atrasa ninguém. você escolhe o grupo do <strong>seu pace</strong> e corre junto com
+          gente do brasil inteiro que tá no mesmo ritmo que você.</p>
+        <a class="btn js-strava" href="https://www.strava.com/clubs/1765318" target="_blank" rel="noopener">bora correr junto
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"
+            stroke-linejoin="round" aria-hidden="true">
+            <path d="M5 12h14M13 6l6 6-6 6" />
+          </svg></a>
+      </div>
+    </section>
+
+    <section class="sec px" id="grupos">
+      <div class="sec-top">
+        <div class="sec-num"><span class="label">/ 01</span><span class="label">os grupos</span></div>
+        <h2>Qual é o<br><span class="yl">seu grupo</span></h2>
+        <p class="lead">olhe o pace das suas corridas leves no relógio ou no strava. é ele que diz qual é o seu grupo,
+          não o pace de prova.</p>
+      </div>
+
+      <div class="track" role="img"
+        aria-label="cinco grupos correndo cada um no seu ritmo: brisa, vibe, embalo, impulso e voo">
+        <div class="lane" style="--c: var(--brisa)">
+          <div class="lane-run"><span class="lane-name">Brisa</span>
+            <div class="runner" style="--dur: 16s; --delay: -3s; --rest: 22%"><i></i></div>
+          </div><span class="lane-pace">7:00+<small>/km</small></span>
+        </div>
+        <div class="lane" style="--c: var(--vibe)">
+          <div class="lane-run"><span class="lane-name">Vibe</span>
+            <div class="runner" style="--dur: 14s; --delay: -6s; --rest: 40%"><i></i></div>
+          </div><span class="lane-pace">6:15–6:59<small>/km</small></span>
+        </div>
+        <div class="lane" style="--c: var(--embalo)">
+          <div class="lane-run"><span class="lane-name">Embalo</span>
+            <div class="runner" style="--dur: 12.5s; --delay: -2s; --rest: 56%"><i></i></div>
+          </div><span class="lane-pace">5:45–6:14<small>/km</small></span>
+        </div>
+        <div class="lane" style="--c: var(--impulso)">
+          <div class="lane-run"><span class="lane-name">Impulso</span>
+            <div class="runner" style="--dur: 11s; --delay: -7s; --rest: 70%"><i></i></div>
+          </div><span class="lane-pace">5:15–5:44<small>/km</small></span>
+        </div>
+        <div class="lane" style="--c: var(--voo)">
+          <div class="lane-run"><span class="lane-name">Voo</span>
+            <div class="runner" style="--dur: 9.5s; --delay: -4s; --rest: 84%"><i></i></div>
+          </div><span class="lane-pace">até 5:14<small>/km</small></span>
+        </div>
+      </div>
+
+      <div class="finder">
+        <label for="pace-input">digite aqui o seu pace de rodagem</label>
+        <input id="pace-input" type="text" inputmode="numeric" value="6:30" maxlength="5" aria-describedby="pace-result"
+          autocomplete="off">
+        <span class="unit">/km</span>
+        <output id="pace-result" for="pace-input" aria-live="polite"></output>
+      </div>
+
+      <div class="groups">
+        <article class="group" data-g="brisa" style="--c: var(--brisa)"><span class="n">01</span>
+          <h3>Brisa</h3>
+          <div class="pace">7:00+<small>min/km</small></div>
+          <p>tá começando ou intercalando corrida e caminhada? seu lugar é aqui.</p>
+        </article>
+        <article class="group" data-g="vibe" style="--c: var(--vibe)"><span class="n">02</span>
+          <h3>Vibe</h3>
+          <div class="pace">6:15–6:59<small>min/km</small></div>
+          <p>já faz 5 km de boa e quer companhia pra manter o ritmo.</p>
+        </article>
+        <article class="group" data-g="embalo" style="--c: var(--embalo)"><span class="n">03</span>
+          <h3>Embalo</h3>
+          <div class="pace">5:45–6:14<small>min/km</small></div>
+          <p>corre toda semana e tá com vontade de evoluir.</p>
+        </article>
+        <article class="group" data-g="impulso" style="--c: var(--impulso)"><span class="n">04</span>
+          <h3>Impulso</h3>
+          <div class="pace">5:15–5:44<small>min/km</small></div>
+          <p>tá treinando pra 10k ou 21k e quer gente pra puxar junto.</p>
+        </article>
+        <article class="group" data-g="voo" style="--c: var(--voo)"><span class="n">05</span>
+          <h3>Voo</h3>
+          <div class="pace">até 5:14<small>min/km</small></div>
+          <p>já voa baixo e quer parceiro que acompanhe.</p>
+        </article>
+      </div>
+      <p class="note">mudou de pace? é só trocar de grupo. e subir de grupo aqui é festa.</p>
+    </section>
+
+    <div class="band">
+      <figure><img src="img/run-1.webp" alt="corredoras em movimento, desfocadas pela velocidade">
+        <figcaption>/ cada uma no seu ritmo</figcaption>
+      </figure>
+      <div class="band-title"><span class="label">/ pacera na rua</span>
+        <h2>Ninguém<br>corre<br><span class="yl">sozinho</span></h2>
+      </div>
+      <figure><img src="img/run-3.webp" alt="grupo correndo sobre calçada de pedra com tênis neon">
+        <figcaption>/ todo mundo junto</figcaption>
+      </figure>
+    </div>
+
+    <section class="sec px" id="como-entrar">
+      <div class="sec-top">
+        <div class="sec-num"><span class="label">/ 02</span><span class="label">passo a passo</span></div>
+        <h2>Como entrar<br>no <span class="yl">seu grupo</span></h2>
+        <p class="lead">leva menos de um minuto.</p>
+      </div>
+      <div class="steps">
+        <div class="step"><span class="n">01</span>
+          <h3>Entre no clube</h3>
+          <p>clique no botão, entre no clube do pacera no strava e pronto, você já faz parte.</p>
+        </div>
+        <div class="step"><span class="n">02</span>
+          <h3>Explore os canais</h3>
+          <p>cada grupo tem o seu canal. entre só no canal do grupo do seu pace.</p>
+        </div>
+        <div class="step"><span class="n">03</span>
+          <h3>Encontre o canal do seu pace</h3>
+          <p>escolha o canal do seu grupo, se apresente e pronto. agora é só combinar a próxima corrida.</p>
+        </div>
+      </div>
+
+      <div class="chat">
+        <div>
+          <h3>No canal,<br><span class="yl">todo mundo fala</span></h3>
+          <p class="lead">é ali que você conta seu objetivo, diz de onde é e acha gente pra correr junto. faz amizade,
+            troca contato, combina o longão de domingo. o canal existe pra isso.</p>
+        </div>
+        <div class="chat-box" aria-label="exemplo de conversa no canal do grupo vibe">
+          <div class="chat-top"><span># grupo vibe</span><span>exemplo</span></div>
+          <div class="msg"><span class="av" style="--c: var(--embalo)">M</span>
+            <p class="bubble">oi gente! sou de bh, corro a 6:40 e quero fazer minha primeira 10k em dezembro</p>
+          </div>
+          <div class="msg"><span class="av" style="--c: var(--brisa)">R</span>
+            <p class="bubble">bh também! bora sábado cedo na pampulha?</p>
+          </div>
+          <div class="msg"><span class="av" style="--c: var(--rosa)">J</span>
+            <p class="bubble">tô em curitiba, alguém pra rodar 8k amanhã às 6h?</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec" id="mulheres">
+      <div class="women">
+        <div class="women-copy">
+          <div style="display: grid; gap: 22px;">
+            <div class="sec-num" style="border-top-color: rgba(238,232,216,.22)"><span class="label">/ 03</span><span
+                class="label">também tem</span></div>
+            <h2>Espaço só<br>pra <em>mulheres</em></h2>
+          </div>
+          <div style="display: grid; gap: 28px;">
+            <p class="lead">toda mulher entra no grupo do seu pace, igual todo mundo. mas se quiser, também tem um
+              espaço só pra elas, aberto a todos os paces. pra trocar ideia, combinar treino e correr junto com mais
+              tranquilidade.</p>
+            <div class="stripe" aria-hidden="true"><span style="--c: var(--brisa)"></span><span
+                style="--c: var(--vibe)"></span><span style="--c: var(--embalo)"></span><span
+                style="--c: var(--impulso)"></span><span style="--c: var(--voo)"></span><span
+                style="--c: var(--rosa)"></span></div>
+          </div>
+        </div>
+        <figure><img src="img/run-5.webp" alt="mulheres correndo na grama com tênis rosa" style="object-position: 50% 60%">
+        </figure>
+      </div>
+    </section>
+
+    <section class="sec px" id="onde">
+      <div class="sec-top">
+        <div class="sec-num"><span class="label">/ 04</span><span class="label">onde a gente corre</span></div>
+        <h2>No brasil<br><span class="yl">inteiro</span></h2>
+      </div>
+      <div class="where">
+        <div>
+          <h3><span class="yl">/</span>&nbsp;Strava</h3>
+          <p>a casa do clube. um canal pra cada grupo, troque ideia e encontre seu parceiro de corrida.</p>
+        </div>
+        <div>
+          <h3><span class="yl">/</span>&nbsp;GymRats</h3>
+          <p>desafio mensal que junta todos os grupos do pacera, independente do pace.</p>
+        </div>
+        <div>
+          <h3><span class="yl">/</span>&nbsp;Planilhas</h3>
+          <p>um treino pensado pro ritmo de cada grupo, de presente pra quem entra.</p>
+        </div>
+        <div>
+          <h3><span class="yl">/</span>&nbsp;Encontros</h3>
+          <p>em breve, corridas ao vivo nas cidades com mais gente do clube.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="final px">
+      <div class="final-bg"><img src="img/run-4.webp" alt="grupo grande correndo numa avenida arborizada"></div>
+      <div>
+        <h2>Seu ritmo<br><span class="yl">tem lugar.</span></h2>
+        <p class="lead">entre no clube, escolha seu grupo e chegue dando oi. a gente tá te esperando.</p>
+        <a class="btn js-strava" href="https://www.strava.com/clubs/1765318" target="_blank" rel="noopener">entre no clube no
+          strava
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"
+            stroke-linejoin="round" aria-hidden="true">
+            <path d="M5 12h14M13 6l6 6-6 6" />
+          </svg></a>
+      </div>
+      <div class="final-star" aria-hidden="true"><img src="img/logo-estrela.svg" alt="" width="600" height="159"></div>
+    </section>
+  </main>
+
+  <footer id="contato">
+    <div class="foot-mark px" aria-hidden="true"><img src="img/logo-pacera.svg" alt="" width="406" height="129"></div>
+    <div class="foot-row px">
+      <div class="contacts">
+        <span><span class="k">e-mail</span><button class="mail" id="mail" type="button"
+            title="clique para copiar">contatopaceraclub@gmail.com</button></span>
+        <span><span class="k">instagram</span><a href="https://www.instagram.com/paceraclub" target="_blank"
+            rel="noopener">@paceraclub</a></span>
+      </div>
+      <span>every pace has a place.</span>
+    </div>
+  </footer>
+  <div class="toast" id="toast" role="status" aria-live="polite">e-mail copiado</div>
+
+  <script src="script/script.js"></script>
+
+</body>
+
+</html>
