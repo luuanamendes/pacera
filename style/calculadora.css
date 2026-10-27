@@ -92,3 +92,21 @@
 .table-wrap { overflow-x: auto; }
 
 .foot-space { margin-top: clamp(64px, 8vw, 120px); }
+
+/* / 05 zonas de treino */
+.pred .zp { font: 700 clamp(22px, 2.2vw, 30px)/1 var(--display); font-variant-numeric: tabular-nums; white-space: nowrap; text-align: right; }
+.pred .zp small { font-size: .6em; color: var(--muted); margin-left: 4px; }
+.pred th.r { text-align: right; padding-right: 0; }
+.pred td.zp { padding-right: 0; }
+.zone-dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 8px; background: var(--accent); vertical-align: middle; }
+.tips ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 4px; }
+.tips li { position: relative; padding-left: 18px; font-size: 13px; line-height: 1.4; color: var(--muted); max-width: 52ch; }
+.tips li::before { content: "/"; position: absolute; left: 0; color: var(--accent); }
+.z-note { font-size: 14px; line-height: 1.5; color: var(--cream); opacity: .9; max-width: 52ch; }
+.z-warn { font-size: 12px; line-height: 1.45; color: var(--muted); border-top: 1px solid var(--line); padding-top: 10px; }
+#z-out { gap: 8px; }
+#z-out .pred th { padding-bottom: 6px; }
+#z-out .pred td { padding: 7px 12px 7px 0; }
+#z-out .pred td.zp { padding-right: 0; }
+#z-out .pred .zp { font-size: clamp(20px, 2vw, 26px); }
+#z-out .hint, #z-out .z-note { font-size: 13px; }

@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+
+  <title>Planilha Pacera</title>
+  <!-- prévia de compartilhamento (whatsapp, instagram, redes) -->
+  <meta name="description" content="escolha o seu grupo e receba no e-mail a planilha de treino pensada pro seu pace.">
+  <meta name="theme-color" content="#121212">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="pacera club.">
+  <meta property="og:title" content="planilha pacera | o treino do seu grupo no seu e-mail">
+  <meta property="og:description" content="escolha o seu grupo e receba no e-mail a planilha de treino pensada pro seu pace.">
+  <meta property="og:url" content="https://pacera-theta.vercel.app/planilha.html">
+  <meta property="og:image" content="https://pacera-theta.vercel.app/img/pacera-previa.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="corredores na rua com a frase every pace has a place e o logo pacera">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" type="image/svg+xml" href="icon.svg">
+  <link rel="stylesheet" href="style/reset.css">
+  <link rel="stylesheet" href="style/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;0,900;1,800;1,900&family=Outfit:wght@300;400;500;600&display=swap">
+  <link rel="stylesheet" href="style/planilha.css">
+
+</head>
+
+<body>
+  <header class="top" id="top">
+    <div class="top-in px">
+      <a class="logo" href="index.html" aria-label="pacera club, início"><img src="img/logo-pacera.svg" alt="" width="406" height="129"></a>
+      <span class="label">de presente pra quem entra</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="pl-hero px">
+      <h1>Sua planilha de <span class="yl">treino</span></h1>
+      <p class="lead">escolha o seu grupo, deixe seu nome, @ e e-mail, e a gente manda <strong>a planilha do seu pace</strong> direto na sua caixa de entrada.</p>
+    </section>
+
+    <section class="pl-sec px" aria-labelledby="t-form">
+      <h2 class="sr" id="t-form">receber a planilha</h2>
+
+      <form class="pl-form" id="form" novalidate>
+        <!-- / 01 grupo -->
+        <fieldset class="pl-step">
+          <div class="sec-num"><span class="label">/ 01</span><span class="label">escolha seu grupo</span></div>
+          <legend class="sr">escolha seu grupo</legend>
+          <div class="pick" id="pick">
+            <label class="pick-g" style="--c: var(--brisa)">
+              <input type="radio" name="grupo" value="Brisa">
+              <span class="r" aria-hidden="true"></span><span class="g">Brisa</span><span class="p">7:00+<small>min/km</small></span>
+            </label>
+            <label class="pick-g" style="--c: var(--vibe)">
+              <input type="radio" name="grupo" value="Vibe">
+              <span class="r" aria-hidden="true"></span><span class="g">Vibe</span><span class="p">6:15–6:59<small>min/km</small></span>
+            </label>
+            <label class="pick-g" style="--c: var(--embalo)">
+              <input type="radio" name="grupo" value="Embalo">
+              <span class="r" aria-hidden="true"></span><span class="g">Embalo</span><span class="p">5:45–6:14<small>min/km</small></span>
+            </label>
+            <label class="pick-g" style="--c: var(--impulso)">
+              <input type="radio" name="grupo" value="Impulso">
+              <span class="r" aria-hidden="true"></span><span class="g">Impulso</span><span class="p">5:15–5:44<small>min/km</small></span>
+            </label>
+            <label class="pick-g" style="--c: var(--voo)">
+              <input type="radio" name="grupo" value="Voo">
+              <span class="r" aria-hidden="true"></span><span class="g">Voo</span><span class="p">até 5:14<small>min/km</small></span>
+            </label>
+          </div>
+          <p class="hint">não sabe seu grupo? olhe o pace das suas corridas leves ou <a href="index.html#grupos">descubra aqui</a>.</p>
+        </fieldset>
+
+        <!-- / 02 dados -->
+        <fieldset class="pl-step">
+          <div class="sec-num"><span class="label">/ 02</span><span class="label">pra onde a gente manda</span></div>
+          <legend class="sr">seus dados</legend>
+          <div class="pl-fields">
+            <div class="pl-field">
+              <label class="flabel" for="nome">nome</label>
+              <input class="pl-in" id="nome" name="nome" type="text" autocomplete="name" placeholder="seu nome" required>
+            </div>
+            <div class="pl-field">
+              <label class="flabel" for="instagram">@ do instagram</label>
+              <input class="pl-in" id="instagram" name="instagram" type="text" placeholder="@seuperfil" autocapitalize="none" autocorrect="off" spellcheck="false" required>
+            </div>
+            <div class="pl-field">
+              <label class="flabel" for="email">e-mail</label>
+              <input class="pl-in" id="email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="voce@email.com" autocapitalize="none" spellcheck="false" required>
+            </div>
+          </div>
+
+          <label class="consent">
+            <input type="checkbox" id="consentimento" name="consentimento" value="sim">
+            <span>aceito receber novidades, treinos e eventos do pacera club por e-mail.</span>
+          </label>
+
+          <!-- campo invisível anti-spam: pessoas não veem, robôs preenchem -->
+          <input class="hp" type="text" name="site" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+          <p class="pl-erro" id="erro" role="alert"></p>
+          <button class="btn pl-send" id="botao" type="submit" disabled>quero minha planilha
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+        </fieldset>
+      </form>
+
+      <div class="pl-ok" id="ok" hidden tabindex="-1">
+        <div class="sec-num"><span class="label">/ prontinho</span><span class="label">confira seu e-mail</span></div>
+        <h2>Tá no seu<br><span class="yl">e-mail</span></h2>
+        <p class="lead">mandamos a planilha do grupo <strong id="ok-grupo"></strong> para <strong id="ok-email"></strong>. não chegou em alguns minutos? dá uma olhada no spam ou na aba promoções.</p>
+        <a class="br js-strava" href="https://www.strava.com/clubs/1765318" target="_blank" rel="noopener">agora é só entrar no clube</a>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contato" class="foot-space">
+    <div class="foot-row px">
+      <div class="contacts">
+        <span><span class="k">e-mail</span><button class="mail" id="mail" type="button" title="clique para copiar">contatopaceraclub@gmail.com</button></span>
+        <span><span class="k">instagram</span><a href="https://www.instagram.com/paceraclub" target="_blank" rel="noopener">@paceraclub</a></span>
+      </div>
+      <span>every pace has a place.</span>
+    </div>
+  </footer>
+  <div class="toast" id="toast" role="status" aria-live="polite">e-mail copiado</div>
+
+  <script src="script/planilha.js"></script>
+</body>
+
+</html>

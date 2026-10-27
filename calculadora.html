@@ -56,7 +56,7 @@
       <div class="sec-num"><span class="label">/ calculadora</span><span class="label">pra todo corredor</span></div>
       <h1>Calcule o<br>seu <span class="yl">ritmo</span></h1>
       <div class="hero-row">
-        <p class="lead">pace, velocidade, distância, tempo, calorias e previsão de prova. preencha o que você sabe e a gente calcula o resto.</p>
+        <p class="lead">pace, velocidade, distância, tempo, calorias, previsão de prova e zonas de treino. preencha o que você sabe e a gente calcula o resto.</p>
         <div style="display: grid; gap: 8px; justify-items: start;">
           <div class="unit" role="group" aria-label="unidade de medida">
             <button type="button" id="unit-km" aria-pressed="true">quilômetros</button>
@@ -216,6 +216,46 @@
           <p class="hint">a previsão usa a fórmula de riegel, bem conhecida entre corredores. ela funciona melhor pra quem já treina a distância maior. na maratona, costuma ser otimista.</p>
         </div>
         <div class="result" aria-live="polite" id="r-out"></div>
+      </div>
+    </section>
+    <!-- / 05 zonas de treino -->
+    <section class="tool-sec px" id="zonas" aria-labelledby="t5">
+      <div class="tool-head">
+        <div class="sec-num"><span class="label">/ 05</span><span class="label">a partir de um teste</span></div>
+        <h2 id="t5">Zonas de<br><span class="yl">treino</span></h2>
+        <p class="lead">realize um teste de 3 ou 5 km em esforço máximo e descubra o pace indicado para cada tipo de treino.</p>
+      </div>
+      <div class="tool">
+        <div class="fields">
+          <div class="field">
+            <span class="flabel">distância do teste</span>
+            <div class="seg" role="group" aria-label="distância do teste" id="z-test">
+              <button type="button" data-km="3" aria-pressed="false">3 km</button>
+              <button type="button" data-km="5" aria-pressed="true">5 km</button>
+            </div>
+          </div>
+          <div class="field">
+            <span class="flabel" id="z-time-l">tempo do teste</span>
+            <div class="inrow" role="group" aria-labelledby="z-time-l">
+              <input class="in" id="z-h" type="text" inputmode="numeric" maxlength="3" placeholder="0" aria-label="horas" autocomplete="off"><span class="sep">:</span>
+              <input class="in" id="z-m" type="text" inputmode="numeric" maxlength="2" placeholder="00" aria-label="minutos" autocomplete="off"><span class="sep">:</span>
+              <input class="in" id="z-s" type="text" inputmode="numeric" maxlength="2" placeholder="00" aria-label="segundos" autocomplete="off"><span class="u">h : min : s</span>
+            </div>
+          </div>
+          <div class="tips">
+            <span class="flabel">como realizar o teste</span>
+            <ul>
+              <li>realize o teste descansado, sem treinos intensos nas 24 horas anteriores.</li>
+              <li>tenha uma boa noite de sono e esteja alimentado e hidratado.</li>
+              <li>prefira horários de temperatura amena e evite o sol entre 10h e 16h.</li>
+              <li>escolha um percurso plano e sem interrupções.</li>
+              <li>faça um aquecimento de 10 minutos antes de iniciar.</li>
+              <li>mantenha um ritmo forte e constante, que possa ser sustentado até o final, sem pausas. evite começar rápido demais.</li>
+              <li>repita o teste a cada 6 a 8 semanas para acompanhar sua evolução.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="result" aria-live="polite" id="z-out"></div>
       </div>
     </section>
   </main>

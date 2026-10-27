@@ -218,6 +218,37 @@
   }
   [rDist, $("r-h"), $("r-m"), $("r-s")].forEach(function (el) { el.addEventListener("input", rRender); });
 
+  /* ---------- / 05 zonas de treino ---------- */
+  var zTest = 5, zOut = $("z-out");
+  var ZNOTE = '<p class="z-note">as zonas são uma referência para orientar seus treinos. a percepção de esforço também deve ser considerada: no ritmo leve, é possível conversar normalmente; no moderado, apenas frases curtas; no forte, a fala fica difícil.</p>' +
+    '<p class="z-warn">antes de iniciar ou alterar sua rotina de treinos, consulte um médico e um profissional de educação física para avaliar sua aptidão para a prática de exercícios.</p>';
+  // faixas em segundos por km somados ao pace de 5 km: [nome, uso, mais rápido, mais lento, cor da bolinha]
+  var zones = [
+    ["leve", "rodagem e recuperação", 60, 90, "#6E9A61"],
+    ["moderado", "treinos longos e ritmo de prova longa", 30, 45, "#DB8547"],
+    ["forte contínuo", "limiar, blocos de 20 a 30 min", 15, 25, "#B4483F"],
+    ["tiros", "intervalados de 400 m a 1 km", -10, 0, "#7E5A9B"]
+  ];
+  function zRender() {
+    var t = readTime("z");
+    if (!ok(t)) { zOut.innerHTML = '<span class="k">suas zonas</span><p class="empty">informe o tempo do seu teste.</p>' + ZNOTE; return; }
+    var p = t / (zTest * KM); // segundos por metro no teste
+    if (zTest === 3) p *= Math.pow(5 / 3, 0.06); // converte o 3 km pro ritmo equivalente de 5 km
+    var rows = zones.map(function (z) {
+      var fast = p + z[2] / KM, slow = p + z[3] / KM;
+      return '<tr><td><span class="zone-dot" style="background:' + z[4] + '"></span>' + z[0] + '<small>' + z[1] + '</small></td>' +
+        '<td class="zp">' + paceStr(fast) + ' a ' + paceStr(slow) + '<small>' + lbl("pace") + '</small></td></tr>';
+    }).join("");
+    zOut.innerHTML = '<span class="k">suas zonas</span><div class="table-wrap"><table class="pred"><thead><tr><th>zona</th><th class="r">pace</th></tr></thead><tbody>' + rows + '</tbody></table></div>' +
+      '<p class="hint">referência: ' + paceStr(p) + ' ' + lbl("pace") + ' no ritmo de 5 km' + (zTest === 3 ? ' (convertido a partir do teste de 3 km)' : '') + '.</p>' +
+      ZNOTE;
+  }
+  $("z-test").addEventListener("click", function (e) {
+    var b = e.target.closest("button"); if (!b) return;
+    zTest = Number(b.getAttribute("data-km")); pressed($("z-test"), "data-km", b.getAttribute("data-km")); zRender();
+  });
+  ["z-h", "z-m", "z-s"].forEach(function (id) { $(id).addEventListener("input", zRender); });
+
   /* ---------- quilômetros ou milhas ---------- */
   function relabel() {
     document.querySelectorAll(".u-dist").forEach(function (e) { e.textContent = lbl("dist"); });
@@ -227,7 +258,7 @@
     $("unit-km").setAttribute("aria-pressed", unit === "km" ? "true" : "false");
     $("unit-mi").setAttribute("aria-pressed", unit === "mi" ? "true" : "false");
   }
-  function renderAll() { cSolve(); eRender(); kRender(); rRender(); }
+  function renderAll() { cSolve(); eRender(); kRender(); rRender(); zRender(); }
   function setUnit(next) {
     if (next === unit) return;
     // guarda os valores na medida interna antes de trocar
@@ -252,4 +283,5 @@
   writePace(ePm, ePs, 360 / KM); writeSpeed(eV, KM / 360); eRender();
   kW.value = unit === "mi" ? "132" : "60"; writeDist(kDist, 5 * KM); writeTime("k", 1800); kRender();
   writeDist(rDist, 5 * KM); writeTime("r", 1800); rRender();
+  writeTime("z", 1800); zRender();
 })();
