@@ -56,7 +56,6 @@
     if (!nome || !insta || !email) { erro.textContent = "preencha nome, @ e e-mail."; return; }
     if (!emailOk) { erro.textContent = "confere o e-mail? parece que tem algo errado."; return; }
     if (!aceite.checked) return;
-    if (d.get("site")) return; // robô
 
     botao.disabled = true;
     botao.classList.add("enviando");
