@@ -1,6 +1,6 @@
 (function () {
   // link do app da web do google apps script (termina em /exec). cole aqui depois de implantar o script.
-  var SCRIPT_URL = "COLE_AQUI_O_LINK_DO_APPS_SCRIPT";
+  var SCRIPT_URL = "https://script.google.com/macros/s/AKfycby_YqN1eQJ15E8sf5pNeuEpn2yPvZPzjeclyK_bETlWuDH77cGbR3MdIbi-aSD4LDpM/exec";
 
   // link do clube no strava (igual ao script.js)
   var STRAVA_URL = "https://www.strava.com/clubs/1765318";
